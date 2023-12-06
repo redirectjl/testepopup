@@ -26,7 +26,7 @@ function mostrarPopUpAleatorio() {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup').style.animation = 'slideDown 0.5s ease forwards';
 
-    const tempoExibicao = Math.random() * 15000;
+    const tempoExibicao = Math.floor(Math.random() * (30000 - 15000 + 1)) + 15000; // Gera um número entre 15 e 30 segundos
 
     setTimeout(() => {
         fecharPopUp();
