@@ -61,10 +61,6 @@ img {
       top: -100px; 
     }
   }
-  
-  .popup span {
-    display: block;
-  }
 
 .gerador {
     position: relative;
@@ -160,6 +156,20 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+    .popup {
+        width: 330px;
+        padding: 5px;
+    }
+
+    .popup div img {
+        width: 60px;
+      }
+    
+    .popup div p {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
     .gerador ul li {
         height: 60px !important;
     }
