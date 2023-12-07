@@ -19,6 +19,12 @@ const nomes = ['João R',
     'Gabriel M'
 ];
 
+let count = 0;
+
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 function mostrarPopUpAleatorio() {
     const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
     document.getElementById('nomeAleatorio').innerHTML = `<img src="/images/check-mark-icon.png" alt="check mark icon image" /> <p><strong>${nomeAleatorio}</strong>. acabou de GANHAR com a <strong>Falha na plataforma!</strong></p>`;
@@ -26,7 +32,7 @@ function mostrarPopUpAleatorio() {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup').style.animation = 'slideDown 0.5s ease forwards';
 
-    const tempoExibicao = Math.floor(Math.random() * (30000 - 15000 + 1)) + 15000; // Gera um número entre 15 e 30 segundos
+    const tempoExibicao = Math.random() * randomIntFromInterval(15000, 30000);
 
     setTimeout(() => {
         fecharPopUp();
@@ -35,6 +41,8 @@ function mostrarPopUpAleatorio() {
     setTimeout(() => {
         fecharPopUp(true);
     }, 5000 + tempoExibicao);
+
+    count++;
 }
 
 function fecharPopUp(aleatorio = false) {
@@ -50,4 +58,12 @@ function fecharPopUp(aleatorio = false) {
     }, 500);
 }
 
-mostrarPopUpAleatorio();
+if (count > 0) {
+    mostrarPopUpAleatorio();
+} else {
+    setTimeout(() => {
+        mostrarPopUpAleatorio()
+    }, randomIntFromInterval(7000, 10000))
+}
+
+
