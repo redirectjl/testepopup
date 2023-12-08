@@ -53,13 +53,13 @@ img {
     }
 
     to {
-        top: 20px;
+        top: 10px;
     }
 }
 
 @keyframes slideUp {
     from {
-        top: 20px;
+        top: 10px;
     }
 
     to {
