@@ -70,7 +70,7 @@ img {
 .gerador ul {
     width: 78%;
     z-index: 999;
-    top: 41%;
+    top: 42%;
     left: 50%;
     transform: translateX(-50%);
 }
