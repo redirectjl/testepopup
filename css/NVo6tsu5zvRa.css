@@ -4,7 +4,7 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-#bootstrap-override{
+#bootstrap-override {
     background: rgba(182, 48, 48, 0.89);
 }
 
@@ -16,7 +16,7 @@ img {
     display: none;
     position: fixed;
     text-align: start;
-    top: -100px; 
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     padding: 20px;
@@ -28,131 +28,40 @@ img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     animation-duration: 0.5s;
     z-index: 2;
-  }
+}
 
-  .popup div {
+.popup div {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .popup div img {
+.popup div img {
     width: 100px;
-  }
+}
 
-  .popup div p {
+.popup div p {
     font-size: 24px;
-  }
-  
-  @keyframes slideDown {
+}
+
+@keyframes slideDown {
     from {
-      top: -100px;
+        top: -100px;
     }
+
     to {
-      top: 20px; 
+        top: 20px;
     }
-  }
-  
-  @keyframes slideUp {
+}
+
+@keyframes slideUp {
     from {
-      top: 20px; 
+        top: 20px;
     }
+
     to {
-      top: -100px; 
+        top: -100px;
     }
-  }
-
-.gerador {
-    position: relative;
-}
-
-.gerador ul {
-    position: absolute;
-    width: 90%;
-    z-index: 999;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-top: 12%;
-}
-
-.gerador ul li {
-    width: 85%;
-    height: 100px;
-    border: 1px solid #9d2525;
-    border-radius: 10px;
-    margin: 5px;
-    display: flex;
-}
-
-.gerador ul li h3 {
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 100px;
-    color: #9d2525;
-}
-
-.gerador ul li img {
-    width: 64px;
-    height: 64px;
-    margin: 20px;
-}
-
-.gerador ul li:nth-child(2) img, .gerador ul li:nth-child(3) img {
-    width: 54px !important;
-    height: 54px !important;
-}
-
-.gerador .btn-gerar {
-    position: absolute;
-    width: 85%;
-    left: 50%;
-    bottom: 1%;
-    transform: translateX(-50%);
-    height: 70px;
-    border: none;
-    background-color: #30c620;
-    font-size: 16px !important;
-    font-weight: 500;
-    color: #FFF;
-}
-
-
-
-.gerador .btn-gerar:disabled {
-    background-color: #b8b4b4;
-}
-
-.betSeteK{
-    display: flex;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 860px;
-    justify-content: center;
-    align-items: center;
-}
-
-.betSeteK iframe{
-    display: flex;
-    width: 860px;
-    max-width: 100%;
-    height: 600px;
-
-}
-
-@media screen and (max-width: 500px) {
-
-    .gerador ul {
-        top: 20%;
-    }  
-
 }
 
 @media screen and (max-width: 767px) {
@@ -163,62 +72,156 @@ img {
 
     .popup div img {
         width: 60px;
-      }
-    
+    }
+
     .popup div p {
         margin-top: 10px;
         font-size: 15px;
     }
+}
 
-    .gerador ul li {
-        height: 60px !important;
+.gerador ul {
+    width: 78%;
+    z-index: 999;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gerador ul li {
+    height: 22%;
+    border: 1px solid #9d2525;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.gerador ul li+li {
+    margin-top: 2%;
+}
+
+.gerador ul li h3 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #9d2525;
+}
+
+.gerador ul li img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin: 20px;
+}
+
+.gerador ul li:nth-child(2) img,
+.gerador ul li:nth-child(3) img {
+    padding: 5px;
+}
+
+.gerador .btn-gerar {
+    left: 11%;
+    bottom: 1%;
+    height: 7%;
+    font-size: 16px !important;
+}
+
+.gerador .btn-gerar:disabled {
+    background-color: #b8b4b4;
+}
+
+@keyframes animateText {
+    0% {
+        left: 100%;
     }
 
+    100% {
+        left: -100%;
+    }
+}
+
+.animated-text {
+    height: 22px;
+    top: 88%;
+}
+
+.text-container {
+    left: 100%;
+    animation: animateText 20s linear infinite;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
     .gerador ul li img {
         width: 48px !important;
         height: 48px !important;
         margin: 8px !important;
     }
 
-    .gerador ul li:nth-child(2) img, .gerador ul li:nth-child(3) img {
-        width: 36px !important;
-        height: 36px !important;
-        margin: 12px !important;
+    .gerador ul li:nth-child(2) img,
+    .gerador ul li:nth-child(3) img {
+        padding: 6px;
     }
 
     .gerador ul li h3 {
-        line-height: 60px !important;
         font-size: 18px !important;
     }
+}
 
-    .gerador .btn-gerar {
-        height: 38px !important;
+@media screen and (max-width: 510px) {
+    .animated-text {
+        top: 87%;
     }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1200px){
-    .gerador .tigerimage {
-        min-width: 550px;
-    }  
-}
-
-@media screen and (min-width: 992px) and (max-width: 1000px){
-    .gerador ul {
-        left: 60%;
-        width: 500px;
-    }    
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1200px){
-    .gerador ul {
-        left: 60%;
-        width: 500px;
-    }  
-
-    .gerador .btn-gerar {
-        left: 60%;
-        width: 500px;
+@media screen and (max-width: 450px) {
+    .text-container {
+        font-size: .8rem;
     }
 }
 
+@media screen and (max-width: 340px) {
+    .gerador ul li img {
+        width: 28px !important;
+        height: 28px !important;
+        margin: 8px !important;
+    }
 
+    .gerador ul li:nth-child(2) img,
+    .gerador ul li:nth-child(3) img {
+        padding: 4px;
+    }
+
+    .gerador ul li h3 {
+        font-size: 12px !important;
+    }
+
+    .animated-text {
+        top: 88%;
+    }
+
+    .text-container {
+        font-size: .6rem;
+    }
+
+    .gerador .btn-gerar {
+        font-size: 12px !important;
+    }
+}
+
+.betSeteK {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+    justify-content: center;
+    align-items: center;
+}
+
+.betSeteK iframe {
+    display: flex;
+    width: 860px;
+    max-width: 100%;
+    height: 600px;
+}
