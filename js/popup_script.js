@@ -26,8 +26,11 @@ function randomIntFromInterval(min, max) {
 }
 
 function mostrarPopUpAleatorio() {
-    const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
-    document.getElementById('nomeAleatorio').innerHTML = `<img src="/images/check-mark-icon.png" alt="check mark icon image" /> <p><strong>${nomeAleatorio}</strong>. acabou de GANHAR com a <strong>Falha na plataforma!</strong></p>`;
+    const randomPopup = nomes[Math.floor(Math.random() * nomes.length)];
+    document.getElementById('random-popup').innerHTML = `
+        <img src="images/check-mark-icon.png" alt="check mark icon image"/>
+        <span><strong>${randomPopup}</strong>. acabou de GANHAR com a <strong>Falha na plataforma!</strong></span>
+    `;
 
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup').style.animation = 'slideDown 0.5s ease forwards';

@@ -22,7 +22,8 @@ img {
     padding: 20px;
     background-color: #6dc47c;
     color: #fff;
-    width: 580px;
+    width: 100%;
+    max-width: 280px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -37,11 +38,13 @@ img {
 }
 
 .popup div img {
-    width: 100px;
+    object-fit: contain;
+    width: 40px;
+    height: 40px;
 }
 
-.popup div p {
-    font-size: 24px;
+.popup div span {
+    font-size: 13px;
 }
 
 @keyframes slideDown {
@@ -61,22 +64,6 @@ img {
 
     to {
         top: -100px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .popup {
-        width: 330px;
-        padding: 5px;
-    }
-
-    .popup div img {
-        width: 60px;
-    }
-
-    .popup div p {
-        margin-top: 10px;
-        font-size: 15px;
     }
 }
 
