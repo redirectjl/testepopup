@@ -1,72 +1,62 @@
-const nomes = ['João R',
-    'Fernanda A',
-    'Amauri O',
-    'Carlos M',
-    'Maria F',
-    'Camila D',
-    'Fernanda M',
-    'Pedro B',
-    'Jorge L',
-    'Andressa E',
-    'Lucas S',
-    'Bruno G',
-    'Matheus F',
-    'Guilherme S',
-    'Vinicius P',
-    'Felipe G',
-    'Carlos O',
-    'Julia B',
-    'Gabriel M'
-];
 
-let count = 0;
+        /right-top, right-bottom, left-top, left-bottom, center-top, center-bottom, center-center/
+        var position = "center-top";
 
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
+        /verde, azul, vermelho, amarelo/
+        var color = "verde";
 
-function mostrarPopUpAleatorio() {
-    const randomPopup = nomes[Math.floor(Math.random() * nomes.length)];
-    document.getElementById('random-popup').innerHTML = `
-        <img src="images/check-mark-icon.png" alt="check mark icon image"/>
-        <span><strong>${randomPopup}</strong>. acabou de GANHAR com a <strong>Falha na plataforma!</strong></span>
-    `;
+        /fade, zoom, from-right, from-left, from-top, from-bottom/
+        var animation = "from-top";
 
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('popup').style.animation = 'slideDown 0.5s ease forwards';
+        /nome do produto/
+        var product_name = "";
+        
+        /frase depois do nome da pessoa/
+        var phrase = "acabou de GANHAR com a Falha na Plataforma";
+        var timeout = 4000;
 
-    const tempoExibicao = Math.random() * randomIntFromInterval(15000, 30000);
+        /masc, fem, any/
+        var type_name = "masc, fem";
+        var msg_final = "";
 
-    setTimeout(() => {
-        fecharPopUp();
-    }, 5000);
+        var min_time = 4;
+        var max_time = 20;
 
-    setTimeout(() => {
-        fecharPopUp(true);
-    }, 5000 + tempoExibicao);
+        var nomePessoas = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido', 'Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Marcela', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
 
-    count++;
-}
+        var sobrePessoas = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.', 'G.', 'H.', 'I.', 'J.', 'K.', 'L.', 'M.', 'N.', 'O.', 'P.', 'Q.', 'R.', 'S.', 'T.', 'U.', 'V.', 'W.', 'X.', 'Y.', 'Z.'];
 
-function fecharPopUp(aleatorio = false) {
-    document.getElementById('popup').style.animation = 'slideUp 0.5s ease forwards';
+        var materiais = ['no modo Turbo!','no modo Normal!','com 10x!', 'na primeira jogada!', 'na terceira jogada!'];
 
-    setTimeout(() => {
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('popup').style.animation = '';
+        var option = {
+                position: position,
+                cssAnimationStyle: animation,
+                plainText: false,
+                timeout: timeout
+        };
+        
+        function show_notification() {
+                msg_final = "<strong>" + nomePessoas[Math.floor(Math.random() * nomePessoas.length)] + " " + sobrePessoas[Math.floor(Math.random() * sobrePessoas.length)] + "</strong>";
+                msg_final += decodeURIComponent(escape(" " + phrase + " "));
+                msg_final += "<strong>" + materiais[Math.floor(Math.random() * materiais.length)] + "</strong>";
 
-        if (aleatorio) {
-            mostrarPopUpAleatorio();
+                if (color == "verde") {
+                        Notiflix.Notify.Success(msg_final, option);
+                }
+
+                if (color == "azul") {
+                        Notiflix.Notify.Info(msg_final, option);
+                }
+
+                if (color == "vermelho") {
+                        Notiflix.Notify.Failure(msg_final, option);
+                }
+
+                if (color == "amarelo") {
+                        Notiflix.Notify.Warning(msg_final, option);
+                }
+
+                var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+                setTimeout(show_notification, rand * 1000);
         }
-    }, 500);
-}
-
-if (count > 0) {
-    mostrarPopUpAleatorio();
-} else {
-    setTimeout(() => {
-        mostrarPopUpAleatorio()
-    }, randomIntFromInterval(7000, 10000))
-}
-
-
+        setTimeout(show_notification, 4 * 1000);
