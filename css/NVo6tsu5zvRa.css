@@ -107,21 +107,11 @@ img {
 }
 
 .gerador .btn-gerar {
-
-    font-size: 16px !important;
-    font-weight: 300;
-    height: 30px;
-    bottom: 4.8%;
-    width: 40%;
-    border-radius: 4px;
-    outline: 0;
-    background-image: linear-gradient(4deg, #30c620 20%, #29f513 100%);
-    color: #264d08;
-    border: none;
-    /* left: 11%;
+    
+    left: 11%;
     bottom: 1%;
     height: 7%;
-    font-size: 16px !important; */
+    font-size: 16px !important;
 }
 
 .gerador .btn-gerar:disabled {
